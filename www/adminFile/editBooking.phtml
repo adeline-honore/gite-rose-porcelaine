@@ -1,0 +1,36 @@
+<?php if(isAdmin()): ?>
+<section>
+    <p>Modification de la réservation n°: <?= $affBk['id_booking'] ?> de <?= $affBk['user_name'] ?> <?= $affBk['user_prenom']  ?>, </p>
+    <p>initialement prévue du <?= $affBk['date_debut'] ?> au  <?= $affBk['date_fin'] ?></p>
+    
+
+    <form method="post" action="index.php?page=editBooking&idB=<?= $idB ?>"> 
+        <fieldset>
+            
+            <!-- Date d'arrivée  -->
+            <p>
+                <label for="dateA_e">Date d'arrivée *</label>
+                <input type="date" name="dateA_e" min="<?php echo date('Y-m-d') ?>" value="<?= $affBk['date_debut'] ?>" />
+            </p>
+            <!-- Date de départ  -->
+            <p>
+                <label for="dateB_e">Date de départ *</label>
+                <input type="date" name="dateB_e" min="<?php echo date('Y-m-d') ?>" value="<?= $affBk['date_fin'] ?>" />
+            </p>
+            <!-- Message  -->
+            <p>Message initial du client : </p>
+            <p><?php echo $affBk['message'] ?></p>
+            <input type="hidden" name="msgC_e" value="<?php echo $affBk['message'] ?>" />
+            </p>
+            <p>
+                <label>Ajout au message </label>
+                <textarea name="msg_e" placeholder="Ajouter un commentaire"></textarea>
+            </p>
+            
+            <input type="submit" value="Modifier" title="Modifier la réservation">
+            <a class="annuler" href="index.php?page=admin">Annuler</a>
+        </fieldset>
+    </form>
+    
+<?php endif ?>
+</section>

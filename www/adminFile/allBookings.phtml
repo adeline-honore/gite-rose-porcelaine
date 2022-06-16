@@ -1,0 +1,32 @@
+<?php if(isAdmin()): ?>
+    <section>
+        <p>Bonjour <?php echo $_SESSION['a_nom'] ?> <?php echo $_SESSION['a_pnom'] ?></p>
+        <p>Voici le tableau des réservations à partir d'aujourd'hui <?php echo date('l d F Y') ?> </p>
+        <table>
+            <!-- T HEAD  -->
+            <thead>
+            <tr>
+                <th colspan="3"><p>ID de la réservation</p></th>
+                <th><p>Nom et prénom (id client)</p></th>
+                <th><p>Date de début de séjour</p></th>
+                <th><p>Date de fin de séjour</p></th>
+                <th ><p>Message lors de la réservation</p></th>
+            </tr>
+            </thead>
+            <!-- T BODY  -->
+            <tbody>
+                <?php foreach($allBookings as $allBooking): ?>
+                    <tr>
+                        <td><a href="index.php?page=editBooking&idB=<?= $allBooking['id_booking'] ?>"><i class="fas fa-edit"></i></a></td>
+                        <td><a href="index.php?page=delete&idB=<?= $allBooking['id_booking'] ?>"><i class="fas fa-calendar-times"></i></a></td>
+                        <td><?= $allBooking['id_booking'] ?></td>
+                        <td><?= $allBooking['user_name'] ?> <?= $allBooking['user_prenom'] ?> (<?= $allBooking['id_user'] ?>)</td>
+                        <td><?= $allBooking['date_debut'] ?></td>
+                        <td><?= $allBooking['date_fin'] ?></td>
+                        <td><?= nl2br($allBooking['message']) ?></td>
+                    </tr>
+                <?php endforeach ?>
+            </tbody>
+        </table>
+    </section>
+<?php endif ?>

@@ -1,0 +1,32 @@
+
+<section>
+    <button type="button" class="toggleF">Signer le Livre d'or</button>
+    <form method="post" action="index.php?page=addComment" class="formT">
+        <p>
+            <label>Votre message</label> :
+            <textarea name="comm_msg" placeholder="Votre message :" required></textarea>
+        </p>
+         <p>
+            <label>Votre signature</label> :
+            <input type="text" name="comm_pseudo" placeholder="Votre signature :" required>
+        </p>
+        <p>
+            <label>Votre e-mail</label> :
+            <input type="email" name="comm_mail" placeholder="Votre e-mail :" required>
+        </p>
+        <input type="submit" value="Valider" title="Valider votre commentaire">
+        <a class="annuler" href="index.php?page=comments">Annuler</a>
+    </form>
+</section>
+
+<section>
+    <?php foreach($allComms as $allComm): ?>
+    <article method="post" action="index.php?page=affComments">
+        <blockquote><q><?= nl2br($allComm['comm_text']) ?></q>
+        <p><i class="fas fa-user-circle"></i><?= $allComm['pseudo'] ?> le <?= $allComm['comm_date'] ?></p>
+
+        </blockquote>
+    </article>
+    <?php endforeach ?>
+</section>
+            

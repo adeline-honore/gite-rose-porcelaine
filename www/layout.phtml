@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"><!-- car caractères francais -->
+    <title>Rose de porcelaine</title>
+    <link rel="icon" href="img/rose1.jpg" /> <!-- FAVICON -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous"><!--  FONT AWESOME   -->
+    <!--  ======GOOGLE FONTS====  -->
+    <link href="https://fonts.googleapis.com/css?family=Handlee" rel="stylesheet">
+	<!--   ===FIN SLIDER =====-->
+    <link rel="stylesheet" href="css/normalize.css" /> <!-- ===NORMALIZE===  -->
+    <!--   === JAVA  SCRIPT  =====-->
+    <script src="js/slider.js"></script>
+    <script src="js/article.js"></script>
+    <script src="js/table.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css"><!-- CSS TOUJOURS le dernier  -->
+</head>
+<body>
+	
+	<header>
+		<h1 title="Gîte de la Rose de porcelaine"><a href="index.php?page=home">Le Gîte de la R<img src=img/roseA.png>se de Porcelaine</a></h1>
+		<nav>
+			<?php if(isAdmin()): ?>
+				<a href="index.php?page=admin">Accueil admin</a>
+				<a href="index.php?page=allBookings">Voir la liste des réservations</a>
+				<a href="index.php?page=deconnect">Déconnexion</a>
+			<?php else: ?>
+				<a href="index.php?page=home">Accueil</a>
+				<a href="index.php?page=gite">Le Gîte</a>
+				<a href="index.php?page=lunch">La Table d'hôtes</a>
+				<a href="index.php?page=hobbies">Découvrir l'ile</a>
+				<a href="index.php?page=affComments">Notre Livre d'or</a>
+				<a href="index.php?page=contact">Contact / Accès</a>
+				<a href="index.php?page=booking">Réservation</a>
+			<?php if(isConnect()): ?>
+					<a href="index.php?page=myBookings">Voir mes réservations</a>
+					<a href="index.php?page=deconnect">Me déconnecter</a>
+			<?php endif ?>
+			<?php endif ?>
+		</nav>
+		<article id="artH">
+			<address><a href="mailto:honore_adeline@yahoo.fr"><i class="fas fa-paper-plane"></i> : honore_adeline@yahoo.fr</a></address>
+			<p><i class="fas fa-phone fa-flip-horizontal"></i> : +33 6 11 65 83 55</p>
+			<p>Quartier Morne Honoré</p>
+			<p>L'Olivier</p>
+			<p>97270 Rivière Pilote</p>
+		</article>
+	</header>
+	<main>
+		
+		<?php include $template.'.phtml' ?>
+		
+	</main>
+	<article id="artF">
+			<p>Gîte de la</p>
+			<p>Rose de</p>
+			<p>Porcelaine</p>
+			<p>Quartier Morne Honoré</p>
+			<p>L'Olivier</p>
+			<p>97270 Rivière Pilote</p>
+			<p><i class="fas fa-phone fa-flip-horizontal"></i> : +33 6 11 65 83 55</p>
+			<address><a href="mailto:honore_adeline@yahoo.fr"><i class="fas fa-paper-plane"></i> : honore_adeline@yahoo.fr</a></address>
+			<a href="index.php?page=contact"><i class="fas fa-envelope"></i> : Contactez-nous</a>
+
+		</article>
+	    <!-- Code principal -->
+	<script src="js/script.js"></script>
+</body>
+</html>
+
+

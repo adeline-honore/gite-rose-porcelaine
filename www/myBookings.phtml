@@ -1,0 +1,27 @@
+<section>
+    <?php if($allMyBks==null): ?>
+    <p>Vous n'avez aucune réservation.</p>
+</section>
+    
+<section>
+    <?php else: ?>
+    <p>Voici l'historique de vos réservations</p>
+    
+        <table>
+            <p><?php $_SESSION['id_u'] ?></p>
+            <tr>
+                <th><p>Date de début de séjour</p></th>
+                <th><p>Date de fin de séjour</p></th>
+                <th><p>Message lors de la réservation</p></th>
+            </tr>
+            <?php foreach($allMyBks as $allMyBk): ?>
+            <tr>
+                
+                <td><?= $allMyBk['date_debut'] ?></td>
+                <td><?= $allMyBk['date_fin'] ?></td>
+                <td><?= $allMyBk['message'] ?></td>
+            </tr>
+            <?php endforeach ?>
+        </table>
+    <?php endif ?>
+</section>

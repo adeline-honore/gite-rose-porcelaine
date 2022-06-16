@@ -1,0 +1,118 @@
+
+<?php if(isConnect()): ?>
+<section> 
+    <p>Bonjour <?php echo $_SESSION['pnom'] ?> <?php echo $_SESSION['nom'] ?> !</p>
+
+    <form method="post" action="index.php?page=booking"> 
+        <fieldset>
+            <legend>Je réserve mon prochain séjour</legend>
+            <!-- Date d'arrivée  -->
+            <p>
+                <label for="b_dateA">Date d'arrivée *</label>
+                <input type="date" name="b_dateA" min="<?php echo date('Y-m-d') ?>" value="<?php echo $dat=date('Y-m-d') ?>" required />
+            </p>
+            <!-- Date de départ  -->
+            <p>
+                <label for="b_dateB">Date de départ *</label>
+                <input type="date" name="b_dateB" min="<?php echo date('Y-m-d', strtotime('+2 days')) ?>" value="<?php echo date('Y-m-d', strtotime('+2days')) ?>" required />
+            </p>
+            <!-- Message  -->
+            <p>
+                <label>Message</label>
+                <textarea name="b_msg" placeholder="Votre message :" ></textarea>
+            </p>
+            <input type="submit" value="Valider" title="Valider ma réservation">
+            <a class="annuler" href="index.php">Annuler</a>
+            <p>* Champs obligatoires</p>
+        </fieldset>
+    </form>
+</section>
+
+<?php else: ?>
+<section>
+
+    <h2>Réserver votre séjour</h2>
+    
+    
+    <p>Pour réserver votre séjour :</p>
+    
+    <button class="toggleF">Identifiez-vous</button>
+    
+    <form method="post" action="index.php?page=loginUser" class="formT">
+
+        <fieldset>
+            <p>
+                <label for="b_email">E-mail *</label><br />
+                <input type="text" name="u_email" required />
+            </p>
+            <p>
+                <label for="b_pass">Mot de passe *</label>
+                <input type="password" name="u_pass" required/>
+            </p>
+            
+            <input type="submit" value="Valider" title="Me connecter à mon compte">
+            <a class="annuler" href="index.php">Annuler</a>
+            <p>* Champs obligatoires</p>
+        </fieldset>
+    </form>
+
+    <p>ou</p>
+    
+    <button type="button" class="toggleF">Créer un compte</button>
+
+    <form method="post" action="index.php?page=createUser" class="formT">
+    
+        <fieldset>
+            <legend>Vos coordonnées</legend>
+            <!-- Nom -->
+            <p>
+                <label for="u_nom">Nom *</label><br />
+                <input type="text" name="u_nom" required />
+            </p>
+            <!-- Prérom -->
+            <p>
+                <label for="u_pnom">Prénom *</label><br />
+                <input type="text" name="u_pnom" required />
+            </p>
+            <!-- Adresse -->
+            <p>
+                <label for="u_adress">Adresse </label><br />
+                <input type="text" name="u_adress" />
+            </p>
+            <!-- Code postal -->
+            <p>
+                <label for="u_cp">Code postal</label><br />
+                <input type="text" name="u_cp" />
+            </p>
+            <!-- Ville -->
+            <p>
+                <label for="u_city">Ville</label><br />
+                <input type="text" name="u_city" />
+            </p>
+            <!-- Pays -->
+            <p>
+                <label for="u_country">Pays</label><br />
+                <input type="text" name="u_country" />
+            </p>
+            <!-- Téléphone -->
+            <p>
+                <label for="u_tel">Téléphone *</label><br />
+                <input type="tel" name="u_tel" required />
+            </p>
+            <!-- Mail -->
+            <p>
+                <label for="u_email">E-mail *</label><br />
+                <input type="text" name="u_email" required />
+            </p>
+            <p>
+                <label for="u_pass">Mot de passe *</label>
+                <input type="password" name="u_pass" required/>
+            </p>
+            
+            <input type="submit" value="Valider" title="Créer mon compte">
+            <a class="annuler" href="index.php">Annuler</a>
+            <p>* Champs obligatoires</p>
+        </fieldset>
+    </form> 
+<?php endif ?>
+</section>

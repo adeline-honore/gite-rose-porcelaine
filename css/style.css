@@ -1,0 +1,352 @@
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXX       GLOBAL     XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+/*====   BOX SIZING    =====*/
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+/*====   FIN  BOX SIZING    =====*/
+
+html{
+	font-size: 62.5%;
+}
+
+body{
+	font-size: 1.8rem;
+	font-family: 'Handlee', cursive;
+}
+
+header nav, h1, main, section, blockquote, blockquote p, figure, table, .toggleF{
+	margin: 0 auto;
+}
+
+#artF a, #artH a{
+	margin: 1rem auto;
+}
+
+h2, h3, span, .toggleF{
+	text-transform: uppercase;
+	font-weight: lighter;
+}
+
+img{
+	width: 100%;
+}
+
+a{
+	text-decoration: none;
+}
+
+header a, #artF a, #artH p, #artF p, .toggleF{
+	font-size: 2.6rem;
+}
+
+p{
+	line-height: 2.5rem;
+}
+
+#artH p, #artF p, #artH a, #artF a{
+	line-height: 1rem;
+}
+
+p, q, section article, .toggleF{
+	margin-bottom: 2rem;
+}
+
+h1, header article, main+article, aside p, form+p, p+table{
+	text-align: center;
+}
+
+main a{
+	font-weight: bold;
+}
+
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXX     LAYOUT     XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+
+#artF, aside, section, blockquote, article, #slider-next, #slider-prev{
+	padding: 2rem;
+}
+
+header{
+	padding-top: 2.5rem;
+}
+
+main section{
+	padding-bottom: 2rem;
+}
+
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXX     MODULE    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+
+header nav a, #artH a, #artF a, #slider img, .toggleF{
+	display: block;
+}
+
+/* XXXXXXXXXXXXXX  HEADER  XXXXXXXXXXXXXXXXXXX  */
+h1{
+	
+	width: 270px;
+	font-size: 50px;
+}
+
+h1 a{
+	font-size: 45px;
+}
+
+h1 img{
+	width: 50px;
+}
+
+header nav a{
+	text-align: center;
+	padding: 1rem 0;
+	border-bottom: solid 1px rgb(2, 53, 206);
+}
+
+/* XXXXXXXXXXXXXXXXXX     MAIN   XXXXXXXXXXXXXXX  */
+
+.toggleF{
+	padding: 2rem;
+}
+
+/* page = GITE  */
+
+table{
+	border-collapse: collapse;
+	border-spacing:0;
+	line-height:0;
+}
+
+#galerie_m{
+	max-width: 520px;
+}
+
+#galerie_m td{
+	width: 24%;
+}
+
+#upImag{
+	width:100%;
+}
+
+/* page = COMMENTS */
+q::before{
+	content: "\f10d";
+	font-family: "Font Awesome 5 Free";
+    color: #9bc51a;
+    font-weight: 900;
+    padding-right: 5px;
+}
+
+q::after{
+	content: "\f10e";
+    font-family: "Font Awesome 5 Free";
+    color: #9bc51a;
+    font-weight: 900;
+    padding-left: 5px;
+}
+
+textarea{
+	width: 50%;
+}
+
+/*  page= MY BOOKINGS  */
+
+p+table{
+	border: 1px solid black;
+	font-family: "Cursive";
+}
+
+p+table td{
+	line-height: 2rem;
+}
+
+/* page = ADMIN */
+
+main nav a{
+	padding: 1rem;
+	background-color: rgb(224, 205, 181);
+	display: inline-block;
+	width: 25%;
+}
+
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXX    ETAT     XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+
+#artH, .formT, #slider-prev, #slider-next{
+	display: none;
+}
+
+.show{
+	display: block;
+}
+
+header nav a:hover{
+	background-color: rgb(247, 155, 198);
+	-webkit-transition: all 400ms ease-in;
+    -webkit-transform: scale(1); 
+    -ms-transition: all 400ms ease-in;
+    -ms-transform: scale(1); 
+    -moz-transition: all 400ms ease-in;
+    -moz-transform: scale(1);
+    transition: all 400ms ease-in;
+    transform: scale(1);
+}
+
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXX     THEME     XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+
+body{
+	background-color: rgb(234, 227, 218);
+}
+
+body, main a{
+	color: rgb(117, 92, 51);
+}
+
+header, #artF, .toggleF{
+	background-color: rgb(124, 199, 214);
+}
+
+blockquote{
+	background-color: white;
+}
+
+header a, header p, #artF, #artF a, .toggleF, aside{
+	color: white;
+}
+
+aside{
+	background-color: rgb(173, 86, 74);
+}
+
+.caution article{
+	background-color: rgb(252, 240, 224);
+	border: 1px solid rgb(191, 171, 143);
+}
+
+main article a, main p a{
+	color: rgb(169, 93, 106);
+}
+
+p+table tbody tr:nth-of-type(odd){
+	background-color: rgb(224, 205, 181);
+}
+
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXX     MEDIA QUERIES     XXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+
+/*XXXXXXXXXXXXXXXXX   TABLETTE  XXXXXXXXXXXXXXXXXXXXXX*/
+@media screen and (min-width: 800px){
+
+	.flexwrap{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	
+	section article{
+		margin-bottom: 0;
+	}
+	
+	.flexwrap article{
+		width: 30%;
+	}
+}
+
+/*XXXXXXXXXXXXXXXXX   DESKTOP  XXXXXXXXXXXXXXXXXXXXXX*/
+@media screen and (min-width: 1050px){
+	
+	body{
+		margin: 0 auto;
+	}
+	
+	header{
+		position: fixed;
+		left: 0;
+		width: 320px;
+		overflow: scroll;
+	}
+	
+	#artF{
+		display: none;
+	}
+	
+	#artH, figure:hover #slider-prev, figure:hover #slider-next{
+		display: block;
+	}
+	
+	header nav a{
+		font-size: 27px;
+	}
+	
+	.flexwrap{
+		padding: 1rem;
+	}
+	
+	#artH p:first-child{
+		margin: 0 auto;
+	}
+	
+	#artH{
+		font-size: 25px;
+		padding: 1rem 0 0 0;
+	}
+	
+	main{
+		margin-left: 320px;
+	}
+	
+	h2{
+		margin-top: 0;
+	}
+	
+	.caution{
+		clear: both;
+	}
+	
+	/*figure{
+		position: relative;
+		overflow: hidden;
+	}*/
+	
+	div{
+		position: relative;
+		overflow: hidden;
+	}
+	
+	figure img{
+		min-width: 120%;
+	}
+	
+	aside{
+		position: absolute;
+    	bottom: 1.5rem;
+    	display: inline-block;
+    	width: 80%;
+    	left: 10%;
+    	background-color: rgba(173,86,74,0.8);
+	}
+	
+	#slider-prev, #slider-next{
+    	z-index: 1;
+    	background-color: rgba(0,0,0,0.5);
+    	color: white;
+    	border: none;
+	}
+
+	#slider-prev{
+	    position: absolute;
+	    right: 0;
+	    top: 1.5rem;
+	}
+	
+	#slider-next{
+	    position: absolute;
+	    right: 0;
+	    top: 9rem;
+	}
+}
